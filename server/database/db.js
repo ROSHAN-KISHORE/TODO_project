@@ -3,12 +3,14 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const USERNAME = process.env.DB_USERNAME;
-const PASSWORD = process.env.DB_PASSWORD;
+// const USERNAME = process.env.DB_USERNAME;
+// const PASSWORD = process.env.DB_PASSWORD;
+const DATA_BASE= process.env.DATABASE;
+
 
 const Connection = () => {
 
-    const MONGODB_URI = `mongodb://${USERNAME}:${PASSWORD}@ac-pxwt5pm-shard-00-00.jfrywmq.mongodb.net:27017,ac-pxwt5pm-shard-00-01.jfrywmq.mongodb.net:27017,ac-pxwt5pm-shard-00-02.jfrywmq.mongodb.net:27017/?ssl=true&replicaSet=atlas-n8luu5-shard-0&authSource=admin&retryWrites=true&w=majority`;
+    const MONGODB_URI = DATA_BASE;
 
     mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
